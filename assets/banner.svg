@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d17" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Pulsing Filters -->
+    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="soft-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      .grid-line {
+        stroke: #334155;
+        stroke-opacity: 0.25;
+        stroke-width: 1;
+      }
+      .circuit-line {
+        stroke: #38bdf8;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 8 16;
+        animation: circuitFlow 12s linear infinite;
+      }
+      .circuit-line-purple {
+        stroke: #a855f7;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 6 12;
+        animation: circuitFlowRev 10s linear infinite;
+      }
+      .pulse-orb-1 {
+        animation: pulseOrb 6s ease-in-out infinite alternate;
+      }
+      .pulse-orb-2 {
+        animation: pulseOrb 8s ease-in-out infinite alternate-reverse;
+      }
+      .floating-node {
+        animation: nodeFloat 4s ease-in-out infinite alternate;
+      }
+      .floating-node-2 {
+        animation: nodeFloat2 5s ease-in-out infinite alternate;
+      }
+      .scan-beam {
+        animation: scanMove 7s ease-in-out infinite;
+      }
+
+      @keyframes circuitFlow {
+        from { stroke-dashoffset: 200; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes circuitFlowRev {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 200; }
+      }
+      @keyframes pulseOrb {
+        0% { transform: scale(0.85); opacity: 0.35; }
+        100% { transform: scale(1.25); opacity: 0.7; }
+      }
+      @keyframes nodeFloat {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-8px); }
+      }
+      @keyframes nodeFloat2 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(10px); }
+      }
+      @keyframes scanMove {
+        0% { transform: translateX(0); opacity: 0.1; }
+        50% { opacity: 0.6; }
+        100% { transform: translateX(1100px); opacity: 0.1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" rx="16" fill="url(#bg-grad)" />
+
+  <!-- Animated Glowing Background Orbs (Behind everything) -->
+  <g>
+    <circle class="pulse-orb-1" cx="200" cy="100" r="140" fill="url(#glow-grad)" filter="url(#glow-filter)" />
+    <circle class="pulse-orb-2" cx="1000" cy="320" r="160" fill="url(#glow-grad)" filter="url(#glow-filter)" />
+    <circle class="pulse-orb-1" cx="600" cy="210" r="180" fill="url(#glow-grad)" filter="url(#glow-filter)" />
+  </g>
+
+  <!-- Decorative Matrix / Circuit Grid -->
+  <g class="grid-line">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    
+    <line x1="150" y1="0" x2="150" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="450" y1="0" x2="450" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="750" y1="0" x2="750" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+    <line x1="1050" y1="0" x2="1050" y2="420" />
+  </g>
+
+  <!-- Dynamic Data Lines (Network / RCA Diagnostic Traces) -->
+  <g opacity="0.6">
+    <path class="circuit-line" d="M 50 140 L 220 140 L 290 70 L 450 70" />
+    <path class="circuit-line-purple" d="M 750 350 L 890 350 L 960 280 L 1150 280" />
+    <path class="circuit-line" d="M 100 280 L 180 350 L 350 350" />
+    <path class="circuit-line-purple" d="M 850 70 L 980 70 L 1050 140 L 1150 140" />
+  </g>
+
+  <!-- Dynamic Floating Decorative Tags/Nodes (Bottom/Top Corners to avoid center title) -->
+  <g class="floating-node" opacity="0.85">
+    <rect x="70" y="45" width="140" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
+    <circle cx="85" cy="59" r="4" fill="#22c55e" />
+    <text x="98" y="64" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">TEST TRIAGE</text>
+  </g>
+
+  <g class="floating-node-2" opacity="0.85">
+    <rect x="980" y="45" width="150" height="28" rx="14" fill="#1e293b" stroke="#818cf8" stroke-width="1.2" />
+    <circle cx="995" cy="59" r="4" fill="#a855f7" />
+    <text x="1008" y="64" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">FLAKY ANALYSIS</text>
+  </g>
+
+  <g class="floating-node" opacity="0.85">
+    <rect x="960" y="345" width="170" height="28" rx="14" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" />
+    <circle cx="975" cy="359" r="4" fill="#38bdf8" />
+    <text x="988" y="364" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">PREDICTIVE IMPACT</text>
+  </g>
+
+  <g class="floating-node-2" opacity="0.85">
+    <rect x="70" y="345" width="160" height="28" rx="14" fill="#1e293b" stroke="#34d399" stroke-width="1.2" />
+    <circle cx="85" cy="359" r="4" fill="#10b981" />
+    <text x="98" y="364" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">AUTOMATED RCA</text>
+  </g>
+
+  <!-- Foreground Title Card / Content (Always clearly in foreground) -->
+  <!-- Top Category Tag -->
+  <g transform="translate(600, 115)">
+    <rect x="-140" y="-16" width="280" height="32" rx="16" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.5" />
+    <text x="0" y="5" fill="#a5b4fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" text-anchor="middle">
+      AI &amp; TEST INTELLIGENCE ECOSYSTEM
+    </text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="195" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif" font-weight="900" font-size="44" fill="url(#accent-grad)" filter="url(#soft-glow)" letter-spacing="-0.5">
+    AI Test Failure Root Cause Analysis
+  </text>
+  <text x="600" y="195" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif" font-weight="900" font-size="44" fill="url(#accent-grad)" letter-spacing="-0.5">
+    AI Test Failure Root Cause Analysis
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="240" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="19" fill="#e2e8f0" letter-spacing="0.2">
+    Curated Hub for Autonomous Failure Triage, Flaky Test Detection &amp; Test Impact Analytics
+  </text>
+
+  <!-- Feature Badge Pills Row -->
+  <g transform="translate(600, 290)">
+    <!-- Pill 1 -->
+    <rect x="-335" y="-14" width="150" height="28" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="-260" y="4" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">⚡ Automated Triage</text>
+
+    <!-- Pill 2 -->
+    <rect x="-165" y="-14" width="150" height="28" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="-90" y="4" text-anchor="middle" fill="#818cf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🔍 Root Cause AI</text>
+
+    <!-- Pill 3 -->
+    <rect x="5" y="-14" width="155" height="28" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="82" y="4" text-anchor="middle" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🎯 Flaky Test Isolation</text>
+
+    <!-- Pill 4 -->
+    <rect x="180" y="-14" width="155" height="28" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="257" y="4" text-anchor="middle" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📊 Open-Source &amp; SaaS</text>
+  </g>
+
+  <!-- Border Frame Accent -->
+  <rect x="1.5" y="1.5" width="1197" height="417" rx="15" fill="none" stroke="url(#accent-grad)" stroke-width="1.5" opacity="0.4" />
+</svg>
