@@ -32,71 +32,29 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
 
+The global software testing and test automation market is estimated at **$50B–$60B in 2025–2026** (with AI-driven automation expanding past **$160B+** at >30% CAGR), while specialized AI test failure triage and automated root cause analysis (RCA) represent its fastest-accelerating frontier. The sector is **moderately to highly fragmented** rather than winner-take-all, split across enterprise observability giants (e.g., Datadog), cross-browser cloud ecosystems (e.g., BrowserStack, Sauce Labs), developer observability leaders (e.g., Sentry), and focused test intelligence startups (e.g., Testkube, Launchable).
 
 ## SaaS/Hosted Platforms
 
-
-
-- **BrowserStack Test Failure Analysis Agent**
-
-  **One-click AI root cause analysis** with full test context access. **Features**: Agent combs through logs, test history, and traces to pinpoint root cause; **automatic categorization** as product, environment, or automation bug (or custom categories); **actionable fixes** with recommended next steps . Described as a "real time-saver during triage" by competitors . **Pricing**: Bundled with BrowserStack AI; requires enabled AI and Owner/Admin permissions. **Free tier**: No free tier for AI agent; trial available. **Best for**: teams already on BrowserStack wanting one-click RCA integrated with their automation dashboard—**trade-off**: requires BrowserStack subscription; AI agent gated by plan.
-
-
-
-- **Datadog Test Optimization**
-
-  **Test analytics within Datadog observability** with flaky detection and TIA. **Features**: **Early Flake Detection**—retries new tests before merge to catch flakiness; **Auto Test Retries**—retries failing tests to survive nondeterministic failures; **Test Impact Analysis**—runs only tests relevant to a code change using coverage and Git metadata . **Unique advantage**: test-to-APM/RUM correlation only Datadog can provide . **Pricing**: **$20/active committer/month** (annual), $24 month-to-month, $29 on-demand; 1M test spans per committer included, $3 per additional million; CI Pipeline Visibility separate at $8/committer/month . **Free tier**: Trial available. **Best for**: Datadog organizations wanting test intelligence integrated with existing observability—**trade-off**: pricing scales with headcount; less useful if not already on Datadog.
-
-
-
-- **Sauce Labs Failure Analytics**
-
-  **Enterprise test analytics** with flaky test identification. **Features**: Test analytics identify systemic flakiness and failure trends across builds; enterprise security (SSO, private device pools, audit trails); Backtrace error monitoring . **Pricing**: **From $39/month** (entry live-testing); automated testing priced by parallel sessions . **Free tier**: Free trial; free tier for open-source projects. **Best for**: enterprises needing cross-build analytics with strong security posture—**trade-off**: **inflexible pricing model** noted by reviewers, challenging for smaller organizations.
-
-
-
-- **Launchable**
-
-  **Predictive test selection and flaky insights**. **Features**: **ML model identifies tests with highest probability of failing** based on code and test metadata; **predictive test selection** builds subsets for faster feedback; **flaky test insights**—test session duration, frequency, failure ratio, test entropy measurement . **Pricing**: **Starting at $12,000/year**; usage-based . **Free tier**: Trial available. **Best for**: teams wanting to run fewer tests while catching failures early—**trade-off**: **predictive selection, not RCA**—it tells you what to run, not why something failed.
-
-
-
-- **Testkube AI**
-
-  **Native AI agents for failure analysis and remediation**. **Features**: **Advanced failure analysis**—detects patterns across environments, delivers plain-language summary; **investigation time drops from 30 minutes to under 5**; **automated remediation**—analyzes failures, correlates with code changes, generates fixes, opens pull requests (with guardrails: scoped tokens, no auto-merge) . **Free during preview**: Full access at no additional cost while refining . **Pricing**: Free during preview; pricing TBD. **Free tier**: Yes, during preview. **Best for**: teams wanting agentic failure analysis with remediation proposals—**trade-off**: preview status; remediation requires GitHub/GitLab MCP setup.
-
-
-
-- **Sentry Seer**
-
-  **AI debugger for runtime errors**. **Features**: Uses stack traces, environment details, spans, commits, logs, and profiling data; **identifies root causes with 94.5% accuracy**; suggests fixes; **opens pull requests automatically**; actionability score prioritizes fixable issues . **Pricing**: **$20/month** includes $25/month in credits; available on any paid Sentry plan . **Free tier**: 14-day trial. **Best for**: teams wanting AI debugging integrated with error monitoring—**trade-off**: **runtime errors, not test failures**—it diagnoses production issues, not CI failures.
-
-
-
-- **Develocity Predictive Test Selection**
-
-  **ML-based test selection for Gradle/Maven**. **Features**: **Predictive model** learns from code changes and test outcomes; selects only tests most relevant to a code change; Build Scan shows selected tests and time saved; Predictive Test Selection dashboard visualizes impact . **Pricing**: Commercial; quote-only. **Free tier**: None. **Best for**: enterprises using Gradle/Maven wanting faster feedback—**trade-off**: **test selection, not RCA**; build-system focused.
-
-
-
-- **SeaLights**
-
-  **Test Impact Analysis** for CI optimization. **Features**: **TIA**—analyzes code changes in PR and determines impacted tests; only affected tests execute; **build-based or test-cycle-based recommendations**; full run policy ensures data accuracy . **Pricing**: Paid; tiered by lines of code. **Free tier**: None. **Best for**: teams wanting to optimize test execution—**trade-off**: **TIA, not RCA**—it prevents failures by testing the right code.
-
-
-
-- **Thundra Foresight**
-
-  **Test debugging and tracing** for CI/CD. **Features**: Demonstrates root cause understanding for erroneous tests using distributed testing and debugging in CI/CD pipelines . **Note**: Limited current search results; appears to be part of Thundra's broader observability platform. **Best for**: teams wanting CI test tracing—**trade-off**: limited public pricing and feature detail in available results.
+| Platform | Company Valuation / Scale | Starting Pricing Tier | Free Tier / Trial Limits | Key RCA & Test Intelligence Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Datadog Test Optimization](https://www.datadoghq.com/)** | **~$48B Market Cap** ($3.43B FY2025 revenue; NASDAQ: DDOG) | **$20/active committer/month** (annual billing; $24/mo monthly, $29/mo on-demand; includes 1M test spans/committer, $3/additional 1M spans; CI Pipeline Visibility add-on at $8/committer/mo) | **14-day free trial** with full platform access (bounded by evaluation span limits and 1-day retention; no permanent free tier for Test Optimization) | Early flake detection before merge, automated test retries, test impact analysis (TIA), and proprietary correlation connecting test failures directly with APM/RUM production traces. |
+| **[BrowserStack Test Failure Analysis Agent](https://www.browserstack.com/)** | **~$4.0B Valuation** (~$225M–$230M ARR; profitable private unicorn) | **$59/month** (entry Automate plan with 1 parallel test; bundled with BrowserStack AI features / Test Observability) | **Free trial with 100 minutes** of automated mobile app testing and **60 minutes** of automated browser testing (no permanent free tier for AI Agent) | One-click autonomous root cause analysis agent; parses logs, execution history, and stack traces to categorize failures into product, environment, or test script bugs with fix suggestions. |
+| **[Sentry Seer](https://sentry.io/)** | **~$3.0B Valuation** (~$100M–$120M ARR; Functional Software Inc.) | **$26/month** (Team Plan base; Seer AI features billed at **$20/month** add-on including $25/month AI usage credits) | **Free forever plan ("Developer Plan")**: 1 user, 5,000 error events/mo, 10,000 performance units, 50 session replays/mo, 30-day retention; plus 14-day paid trial | AI root cause analysis across stack traces, commits, and spans with 94.5% diagnostic accuracy; suggests code remediations and can open pull requests autonomously. |
+| **[Sauce Labs Failure Analytics](https://saucelabs.com/)** | **~$500M Valuation** (~$92M revenue; backed by TPG & Riverwood Capital) | **$39/month** (Live Testing entry tier; automated testing plans start at **$149/month** per concurrent session) | **28-day free trial**: 60 automated/live testing minutes, up to 3 parallel virtual machines, and sample AI insight queries (free tier available for approved open-source projects) | Enterprise failure pattern analytics across historical test suites, systemic flaky test detection, machine learning failure categorization, and Backtrace error monitoring. |
+| **[Catchpoint / Thundra Foresight](https://www.catchpoint.com/)** | **~$250M Acquisition Valuation** (Catchpoint acquired Thundra assets; Catchpoint subsequently acquired by LogicMonitor for >$250M; ~$30M–$58M ARR) | **$10,000/year** (Catchpoint Quick Start synthetic/observability tier using token/factor consumption; WebPageTest developer tier from **$75/month**) | **14-day sales-provisioned free trial** (custom-scoped test credits/nodes; WebPageTest public tier offers ~150 free monthly test runs) | Distributed CI/CD tracing, erroneous test execution diagnosis, and performance bottleneck identification across automated pipelines. |
+| **[Develocity Predictive Test Selection](https://develocity.ai/)** | **~$160M Valuation** (~$46M ARR; Gradle Inc.) | **$700/developer/year** (commercial starting baseline tier; quote-only annual committer license for enterprise deployment) | **Free forever on public service** (`scans.gradle.com` provides unlimited individual public Build Scans); 30-day enterprise evaluation trial upon request; free enterprise instances for open-source foundations | Machine learning model trained on code change history and test execution outcomes to select only affected tests; Build Scan failure diagnostics and build caching. |
+| **[SeaLights](https://www.sealights.io/)** | **~$150M Acquisition Valuation** (Acquired by Tricentis for $150M in July 2024; raised $50M prior) | **Custom Quote** (Enterprise tier calibrated by active committers and lines of code; typically scales from ~$10,000+/year) | **Sales-provisioned enterprise POC / trial** (typically 14–30 days scoped to designated test suites; no public free tier) | Test Impact Analysis (TIA) analyzing PR pull-request code diffs to isolate and execute only impacted tests; quality governance and release risk scoring. |
+| **[Launchable](https://www.launchableinc.com/)** | **~$50M–$100M Valuation Range** (Acquired by CloudBees in August 2024; raised $12.7M prior; founded by Kohsuke Kawaguchi) | **$12,000/year** (Mars for Teams tier starting pricing; enterprise usage-based predictive test selection) | **Free forever plan ("Moon for Developers")**: 1 user limit, includes flaky test notifications and test suite health insights; enterprise POC available | ML predictive test selection ordering tests by probability of failure to shorten feedback loops; flaky test scoring and suite entropy tracking. |
+| **[Testkube AI](https://testkube.io/)** | **~$35M–$45M Valuation** ($8M Series A in 2025 led by Insight Partners; Kubeshop spin-off) | **$700/agent/year** (Testkube Pro cloud control-plane; AI features currently in preview at no additional charge) | **Free forever plan (OSS Standalone Edition)**: unlimited runs on self-hosted Kubernetes; **30-day free trial** for cloud-hosted Pro control plane | Native Kubernetes test orchestration with one-click AI failure diagnosis; plain-language summaries, root cause correlation with Git commits, and remediation PR creation via MCP agents. |
 
 
 
