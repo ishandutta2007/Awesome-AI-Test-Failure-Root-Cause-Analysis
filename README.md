@@ -82,7 +82,14 @@ Self-hosted platforms, ML libraries, diagnostic CLI utilities, and MCP servers f
   - **AI Agentic Remediation**: Correlates failures with Git commits and prepares remediation pull requests with fine-grained permission guardrails.
 - **Tech Stack & Deployment**: Go, Kubernetes CRDs, Helm, Docker.
 
-### 3. [PyRCA (Salesforce)](https://github.com/salesforce/PyRCA) [![GitHub_Stars](https://img.shields.io/github/stars/salesforce/PyRCA?style=social&color=white)](https://github.com/salesforce/PyRCA/stargazers)
+### 3. [agent-qa](https://vostride.com) [![GitHub_Stars](https://img.shields.io/github/stars/vostride/agent-qa?style=social&color=white)](https://github.com/vostride/agent-qa/stargazers)
+- **Description**: **Local AI QA failure analysis** (FSL-1.1-ALv2). Runs natural-language web, Android and iOS tests and produces post-run cause digests for its own recorded runs.
+- **Key Capabilities**:
+  - **Evidence review**: Group failures by assigned cause, then inspect steps, screenshots, console and network evidence through the CLI, dashboard or MCP.
+  - **Learning from feedback**: Persistent memidex memory, validated self-improvement and reviewable verdict corrections for later test runs.
+- **Tech Stack & Deployment**: TypeScript, Node.js 24+; local software requiring a configured model and test environment. $0 for permitted local use; model/compute/device and optional remote-service costs are separate.
+
+### 4. [PyRCA (Salesforce)](https://github.com/salesforce/PyRCA) [![GitHub_Stars](https://img.shields.io/github/stars/salesforce/PyRCA?style=social&color=white)](https://github.com/salesforce/PyRCA/stargazers)
 - **Description**: 🧠 **Python Machine Learning Library for Root Cause Analysis** (BSD-3-Clause). A comprehensive ML framework for automated root cause localization and anomaly diagnosis across complex multi-service architectures.
 - **Key Capabilities**:
   - **Causal Discovery & Graph Modeling**: Supports algorithms including PC, GES, and LiNGAM to model causal relationships between components and test services.
@@ -90,14 +97,14 @@ Self-hosted platforms, ML libraries, diagnostic CLI utilities, and MCP servers f
   - **Modular Architecture**: Clean APIs for integrating custom test metrics, trace logs, and anomaly detection models.
 - **Tech Stack & Deployment**: Python, NumPy, Pandas, Scikit-learn.
 
-### 4. [Flaky (Box)](https://github.com/box/flaky) [![GitHub_Stars](https://img.shields.io/github/stars/box/flaky?style=social&color=white)](https://github.com/box/flaky/stargazers)
+### 5. [Flaky (Box)](https://github.com/box/flaky) [![GitHub_Stars](https://img.shields.io/github/stars/box/flaky?style=social&color=white)](https://github.com/box/flaky/stargazers)
 - **Description**: 🔄 **Automatic Flaky Test Retry & Quarantine Plugin for Pytest & Nose** (Apache-2.0). Automatically isolates non-deterministic test failures from actual code regressions in Python CI pipelines.
 - **Key Capabilities**:
   - **Configurable Rerun Thresholds**: Automatically reruns failed tests up to *N* times to determine if failures are transient or deterministic.
   - **Failure Reporting**: Generates granular post-run summaries classifying tests that passed on rerun, pinpointing flakiness before code is merged.
 - **Tech Stack & Deployment**: Python, Pytest, Nose.
 
-### 5. [GitHub Test Reporter (CTRF)](https://github.com/ctrf-io/github-test-reporter) [![GitHub_Stars](https://img.shields.io/github/stars/ctrf-io/github-test-reporter?style=social&color=white)](https://github.com/ctrf-io/github-test-reporter/stargazers)
+### 6. [GitHub Test Reporter (CTRF)](https://github.com/ctrf-io/github-test-reporter) [![GitHub_Stars](https://img.shields.io/github/stars/ctrf-io/github-test-reporter?style=social&color=white)](https://github.com/ctrf-io/github-test-reporter/stargazers)
 - **Description**: 📋 **Universal Test Failure & Flaky Test Reporter for GitHub Actions** (MIT). Ingests Standardized Common Test Report Format (CTRF) to publish rich, interactive test failure diagnostics and flaky analysis directly into GitHub PR comments and workflow summaries.
 - **Key Capabilities**:
   - **Failed Test Root Analysis**: Highlights exact stack traces, failure reasons, and duration regressions in pull requests.
@@ -105,14 +112,14 @@ Self-hosted platforms, ML libraries, diagnostic CLI utilities, and MCP servers f
   - **Framework Agnostic**: Works seamlessly with Jest, Playwright, Cypress, Pytest, JUnit, Mocha, and Go test runners.
 - **Tech Stack & Deployment**: TypeScript, GitHub Actions Action.
 
-### 6. [RCAEval](https://github.com/phamquiluan/RCAEval) [![GitHub_Stars](https://img.shields.io/github/stars/phamquiluan/RCAEval?style=social&color=white)](https://github.com/phamquiluan/RCAEval/stargazers)
+### 7. [RCAEval](https://github.com/phamquiluan/RCAEval) [![GitHub_Stars](https://img.shields.io/github/stars/phamquiluan/RCAEval?style=social&color=white)](https://github.com/phamquiluan/RCAEval/stargazers)
 - **Description**: 🔬 **Open-Source Benchmark & Evaluation Platform for Root Cause Analysis** (MIT). Academic and industrial evaluation framework designed to benchmark metric-, trace-, and log-based RCA algorithms.
 - **Key Capabilities**:
   - **Reproducible Failure Datasets**: Includes real-world failure injection cases across distributed microservices and continuous test pipelines.
   - **Multi-Source Diagnostic Baselines**: Implements and benchmarks graph-based, metric-based, and LLM-assisted root cause localization algorithms.
 - **Tech Stack & Deployment**: Python, Jupyter Notebooks.
 
-### 7. [Captain (RWX Research)](https://github.com/rwx-research/captain) [![GitHub_Stars](https://img.shields.io/github/stars/rwx-research/captain?style=social&color=white)](https://github.com/rwx-research/captain/stargazers)
+### 8. [Captain (RWX Research)](https://github.com/rwx-research/captain) [![GitHub_Stars](https://img.shields.io/github/stars/rwx-research/captain?style=social&color=white)](https://github.com/rwx-research/captain/stargazers)
 - **Description**: 🛡️ **CLI for Flaky Test Quarantine, Automatic Retries & Failure Summaries** (Apache-2.0). Fast, language-agnostic CLI tool for CI test intelligence that quarantines flaky tests without breaking pipeline builds.
 - **Key Capabilities**:
   - **Flaky Test Quarantining**: Prevents flaky tests from blocking pull requests while keeping tests executing for data collection.
@@ -120,7 +127,7 @@ Self-hosted platforms, ML libraries, diagnostic CLI utilities, and MCP servers f
   - **Parallel Test Partitioning**: Optimizes CI runtime through intelligent test file balancing.
 - **Tech Stack & Deployment**: Go, CLI, Cross-platform binary.
 
-### 8. [TeamCity QA Intelligence](https://github.com/kate-horshchar/teamcity-qa-mcp) [![GitHub_Stars](https://img.shields.io/github/stars/kate-horshchar/teamcity-qa-mcp?style=social&color=white)](https://github.com/kate-horshchar/teamcity-qa-mcp/stargazers)
+### 9. [TeamCity QA Intelligence](https://github.com/kate-horshchar/teamcity-qa-mcp) [![GitHub_Stars](https://img.shields.io/github/stars/kate-horshchar/teamcity-qa-mcp?style=social&color=white)](https://github.com/kate-horshchar/teamcity-qa-mcp/stargazers)
 - **Description**: 🤖 **Read-Only MCP Server for AI-Assisted CI Failure Diagnosis** (MIT). Bridges TeamCity CI/CD telemetry with AI assistants (Claude Code, Cursor, Claude Desktop) via the Model Context Protocol (MCP).
 - **Key Capabilities**:
   - **19 Diagnostic MCP Tools**: Collects build failures, test run history, and log excerpts via TeamCity REST APIs.
